@@ -22,6 +22,7 @@ pipeline {
                             sh 'docker build -t grprksh10/my-repo:jma-2.0 .'
                             sh "echo $PASS | docker login -u $USER --password-stdin"
                             sh 'docker push grprksh10/my-repo:jma-2.0'
+
                 }
             }
         }
