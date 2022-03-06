@@ -1,4 +1,4 @@
-#!/usr/bin/env groovy
+/bin/env groovy
 
 pipeline {
     tools {
@@ -19,9 +19,9 @@ pipeline {
                 script {
                     echo "Building the image..."
                     withCredentials([usernamePassword(credentialsID:'docker-hub-repo', passwordVariable:'PASS', usernameVariable: 'USER')]
-                                    sh 'docker build -t grprksh10/my-repo:tagname:jma-2.0 .'
-                                    sh "echo $PASS | dcoker login -u $USER --password-stdin"
-                                    sh 'docker push grprksh10/my-repo:tagname:jma-2.0'
+                        sh 'docker build -t grprksh10/my-repo:tagname:jma-2.0 .'
+                        sh "echo $PASS | dcoker login -u $USER --password-stdin"
+                        sh 'docker push grprksh10/my-repo:tagname:jma-2.0'
                 }
             }
         }
